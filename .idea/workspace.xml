@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ac9803a-9d93-4db4-a860-4b71e430f53c" name="Default Changelist" comment="" />
+    <list default="true" id="3ac9803a-9d93-4db4-a860-4b71e430f53c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Division.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Z0XCkMPTDRnnwtVQ6SeYTnIA0j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/driver.java" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Driver" type="Java Scratch">
+      <option name="MAIN_CLASS_NAME" value="driver" />
+      <module name="TeamBuildingTool" />
+      <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/src/driver.java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -35,5 +67,32 @@
       <updated>1583976859335</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="422" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584003719768">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="422" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584003719768" />
+    <state x="1207" y="317" width="376" height="555" key="#com.intellij.ide.util.MemberChooser" timestamp="1583998859176">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="1207" y="317" width="376" height="555" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1583998859176" />
+    <state x="746" y="292" width="426" height="477" key="FileChooserDialogImpl" timestamp="1584003711796">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="746" y="292" width="426" height="477" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1584003711796" />
+    <state x="645" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584051236157">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="645" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584051236157" />
+    <state x="1605" y="363" key="com.intellij.ide.util.TipDialog/960.0.1920.1080/0.309.960.540/2880.70.540.960@960.0.1920.1080" timestamp="1583977185803" />
+    <state x="623" y="242" key="run.anything.popup" timestamp="1583996000779">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="623" y="242" key="run.anything.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1583996000779" />
+    <state x="623" y="175" width="672" height="676" key="search.everywhere.popup" timestamp="1583998301447">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="623" y="175" width="672" height="676" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1583998301447" />
   </component>
 </project>
