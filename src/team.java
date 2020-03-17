@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-public class team {
+public class Team {
 	private ArrayList<Member> teamOfMembers = new ArrayList<Member>();
 	private String teamID, divisionID;
 	private int size;
 
-	public team(String teamID, String divisionID) {
+	public Team(String teamID, String divisionID) {
 		this.teamID = teamID;
 		this.divisionID = divisionID;
 	}
 
-	public team(String teamID) {
+	public Team(String teamID) {
 		this.teamID = teamID;
 	}
 
@@ -26,10 +26,23 @@ public class team {
 	public void setDivisionID(String divisionID) {
 		this.divisionID = divisionID;
 	}
-	;
 
 	public ArrayList<Member> getTeamOfMembers() {
 		return teamOfMembers;
+	}
+
+	public Member getMember(int index) {
+		return teamOfMembers.get(index);
+	}
+
+	public double getAverageEuclideanDistance(){
+		int dis = 0;
+		for(int x = 0; x < teamOfMembers.size(); x++){
+			for(int y = 0; y < teamOfMembers.size(); y++){
+				dis += (int)(100* Math.abs(Member.euclideanDistance(teamOfMembers.get(x), teamOfMembers.get(y))));
+			}
+		}
+		return ((dis/(Math.pow(teamOfMembers.size(), 2)))/100.00);
 	}
 
 	public String getTeamID() {

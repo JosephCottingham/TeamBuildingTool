@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ac9803a-9d93-4db4-a860-4b71e430f53c" name="Default Changelist" comment="">
+    <list default="true" id="3ac9803a-9d93-4db4-a860-4b71e430f53c" name="Default Changelist" comment="Setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +29,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/driver.java" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TeamBuildingTool" />
+      <recent name="D:\TeamBuildingTool\src" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Driver" type="Java Scratch">
+    <configuration name="driver" type="Java Scratch" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver" />
       <module name="TeamBuildingTool" />
       <option name="SCRATCH_FILE_URL" value="file://$PROJECT_DIR$/src/driver.java" />
@@ -78,29 +88,57 @@
     <option name="LAST_COMMIT_MESSAGE" value="Setup" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="422" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584003719768">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="521" y="198" key="#Project_Structure" timestamp="1584062689990">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
+    <state x="521" y="198" key="#Project_Structure/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584062689990" />
+    <state x="408" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584057382208">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="408" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584057382208" />
     <state x="422" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584003719768" />
     <state x="1207" y="317" width="376" height="555" key="#com.intellij.ide.util.MemberChooser" timestamp="1583998859176">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="1207" y="317" width="376" height="555" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1583998859176" />
-    <state x="587" y="130" width="743" height="801" key="CommitChangelistDialog2" timestamp="1584051263703">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="568" y="133" width="743" height="801" key="CommitChangelistDialog2" timestamp="1584052629197">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
+    <state x="568" y="133" key="CommitChangelistDialog2/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584052629197" />
     <state x="587" y="130" width="743" height="801" key="CommitChangelistDialog2/0.0.1920.1053@0.0.1920.1053" timestamp="1584051263703" />
-    <state x="746" y="292" width="426" height="477" key="FileChooserDialogImpl" timestamp="1584003711796">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="722" y="299" width="426" height="477" key="FileChooserDialogImpl" timestamp="1584057325234">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
+    <state x="722" y="299" key="FileChooserDialogImpl/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584057325234" />
     <state x="746" y="292" width="426" height="477" key="FileChooserDialogImpl/0.0.1920.1053@0.0.1920.1053" timestamp="1584003711796" />
+    <state width="1815" height="359" key="GridCell.Tab.0.bottom" timestamp="1584480849000">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="359" key="GridCell.Tab.0.bottom/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584480849000" />
+    <state width="1815" height="359" key="GridCell.Tab.0.center" timestamp="1584480849000">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="359" key="GridCell.Tab.0.center/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584480849000" />
+    <state width="1815" height="359" key="GridCell.Tab.0.left" timestamp="1584480849000">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="359" key="GridCell.Tab.0.left/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584480849000" />
+    <state width="1815" height="359" key="GridCell.Tab.0.right" timestamp="1584480849000">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state width="1815" height="359" key="GridCell.Tab.0.right/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584480849000" />
+    <state x="430" y="182" key="SettingsEditor" timestamp="1584142284337">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="430" y="182" key="SettingsEditor/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584142284337" />
     <state x="558" y="258" width="802" height="544" key="Vcs.Push.Dialog.v2" timestamp="1584051389043">
       <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="558" y="258" width="802" height="544" key="Vcs.Push.Dialog.v2/0.0.1920.1053@0.0.1920.1053" timestamp="1584051389043" />
-    <state x="645" y="354" key="com.intellij.ide.util.TipDialog" timestamp="1584051236157">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="624" y="363" key="com.intellij.ide.util.TipDialog" timestamp="1584473734698">
+      <screen x="0" y="0" width="1858" height="1080" />
     </state>
+    <state x="624" y="363" key="com.intellij.ide.util.TipDialog/0.0.1858.1080/-1920.0.1858.1080/1920.0.1218.1024@0.0.1858.1080" timestamp="1584473734698" />
     <state x="645" y="354" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1584051236157" />
     <state x="1605" y="363" key="com.intellij.ide.util.TipDialog/960.0.1920.1080/0.309.960.540/2880.70.540.960@960.0.1920.1080" timestamp="1583977185803" />
     <state x="758" y="454" width="404" height="153" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584051713287">

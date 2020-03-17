@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Member {
 	private String firstName, lastName, middleName, memberID, teamID, divisionID, role;
-	private int euclideanDistanceOrigin = -1, openness = -1, neuroticism = -1, conscientiousness = -1, extraversion = -1, agreeableness = -1;
+	private int euclideanDistanceCenter = -1, euclideanDistanceOrigin = -1, openness = -1, neuroticism = -1, conscientiousness = -1, extraversion = -1, agreeableness = -1;
 
 	public static float euclideanDistance(Member a, Member b){
 		if(a.isValidTraitData() && b.isValidTraitData()) return (float) Math.sqrt(Math.pow(a.getAgreeableness()-b.getAgreeableness(), 2)+Math.pow(a.getOpenness()-b.getOpenness(), 2)+Math.pow(a.getExtraversion()-b.getExtraversion(), 2)+Math.pow(a.getNeuroticism()-b.getNeuroticism(), 2)+Math.pow(a.getConscientiousness()-b.getConscientiousness(), 2));
@@ -19,6 +19,7 @@ public class Member {
 		this.extraversion = (int) extraversion*100;
 		this.agreeableness = (int) agreeableness*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public Member(String firstName, String lastName, String memberID) {
@@ -58,21 +59,25 @@ public class Member {
 	public void setNeuroticism(float neuroticism) {
 		this.neuroticism = (int) neuroticism*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public void setConscientiousness(float conscientiousness) {
 		this.conscientiousness = (int) conscientiousness*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public void setExtraversion(float extraversion) {
 		this.extraversion = (int) extraversion*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public void setAgreeableness(float agreeableness) {
 		this.agreeableness = (int) agreeableness*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public void setAllTraits(float openness, float neuroticism, float conscientiousness, float extraversion, float agreeableness){
@@ -82,6 +87,7 @@ public class Member {
 		this.extraversion = (int) extraversion*100;
 		this.neuroticism = (int) neuroticism*100;
 		euclideanDistanceOrigin();
+		euclideanDistanceCenter();
 	}
 
 	public String getFirstName() {
@@ -146,6 +152,7 @@ public class Member {
 		tempMap.put("extraversion", Float.valueOf(this.extraversion/100f));
 		tempMap.put("agreeableness", Float.valueOf(this.agreeableness/100f));
 		tempMap.put("euclideanDistanceOrigin", Float.valueOf(this.euclideanDistanceOrigin/100f));
+		tempMap.put("euclideanDistanceCenter", Float.valueOf(this.euclideanDistanceCenter/100f));
 		return tempMap;
 	}
 
@@ -168,6 +175,18 @@ public class Member {
 
 	public float getEuclideanDistanceOrigin(){
 		return euclideanDistanceOrigin/100f;
+	}
+
+	private int euclideanDistanceCenter(){
+		if(openness != -1 && neuroticism != -1 && conscientiousness != -1 && extraversion != -1 && agreeableness != -1){
+			euclideanDistanceCenter = (int) (100 * Math.sqrt(Math.pow(50 - getAgreeableness(), 2)+Math.pow(50 - getOpenness(), 2)+Math.pow(50 - getExtraversion(), 2)+Math.pow(50 - getNeuroticism(), 2)+Math.pow(50 - getConscientiousness(), 2)));
+			return euclideanDistanceCenter;
+		}
+		return -1;
+	}
+
+	public float getEuclideanDistanceCenter(){
+		return euclideanDistanceCenter/100f;
 	}
 
 }
