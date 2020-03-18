@@ -9,7 +9,7 @@ public class Division {
 	private ArrayList<Member> members = new ArrayList<Member>();
 	private ArrayList<Team> teamOfMembers = new ArrayList<Team>();
 	private String divisionID;
-	private int teamSize, teamNum;
+	private int teamSize, teamNum, extraMemberTeams;
 
 	public Division(){
 
@@ -97,30 +97,105 @@ public class Division {
 		}
 	}
 
-	public void groupBySimularity() {
-		SortByCenterDistance();
-		ArrayList<Member> tempMembers = (ArrayList<Member>) members.clone();
+	public void group(boolean Simularity, boolean teamSize){
+		// if Simularity = true then group by Simularity otherwise Difference
+		// if teamSize = true then grouping based on having a team size speifed, otherwise it is based on the number of teams
+		if (teamSize) {
+			teamNum = (int) Math.ceil(((double) members.size()) / this.teamSize);
+		} else {
+			// checks if any teams need addtiaonal members for all members to be included
+			extraMemberTeams = (int) Math.ceil((((float) members.size()) / teamNum) - (members.size() / teamNum) * teamNum);
+			this.teamSize = members.size() / teamNum;
+		}
+		if (Simularity){
+			groupBySimularity();
+		} else {
+			groupByDifference();
+		}
+	}
+
+	private void groupBySimularity() {
+		teamOfMembers = new ArrayList<Team>();
+		SortByCenterDistance(); // reorder member list to allow for relative comparison
+		ArrayList<Member> unallocatedMembers = (ArrayList<Member>) members.clone(); // create modifiable member list
+		int extraMembersUsed = 0;
+		int extraMember = 1;
 		for (int x = 0; x < teamNum; x++){
-			Team tempTeam = new Team(String.valueOf(x));
-			tempTeam.addMember(tempMembers.get(0));
-			tempMembers.remove(0);
-			System.out.println("Size" + tempMembers.size());
-			for (int y = 0; y < teamSize-1; y++){
-				int index = 0;
-				Member m = tempMembers.get(0);
-				for (int j =1; j < tempMembers.size(); j++){
-					if (Math.abs(Member.euclideanDistance(tempTeam.getTeamOfMembers().get(0), m)) > Math.abs(Member.euclideanDistance(tempTeam.getTeamOfMembers().get(0), tempMembers.get(j)))) {
-						m = tempMembers.get(j);
+			// checks if this team should be given an extra member
+			if (extraMemberTeams<=extraMembersUsed)
+				extraMember = 0;
+
+			Team tempTeam = new Team(String.valueOf(x)); // creates a new team to fill, ID is 0-n
+			tempTeam.addMember(unallocatedMembers.get(0)); // adds the first member, which is the furthest unused point from the center, this prevents the miss allegation of members
+			unallocatedMembers.remove(0); // removes the used member from the valid member list
+			for (int y = 0; y < teamSize-1+extraMember; y++){
+				if(unallocatedMembers.size()<=0) break; // checks if there are more members to add
+				int index = 0; // stores the index that member m is stored | lowers run time because no lookup algorithm
+				Member m = unallocatedMembers.get(0); // stores the member that will be added to a group
+				for (int j =1; j < unallocatedMembers.size(); j++){
+					// sort thoughts the valid member list in order to find the member that is closes to the current team layout.
+					// averageEuclideanDistance returns the average euclidean distance between the member m and all members stored in the team
+					if (averageEuclideanDistance(m, tempTeam) > averageEuclideanDistance(unallocatedMembers.get(j), tempTeam)){
+						// resets m and index to reflect a member that fits the team more
+						m = unallocatedMembers.get(j);
 						index = j;
 					}
 				}
 				tempTeam.addMember(m);
-				tempMembers.remove(index);
+				unallocatedMembers.remove(index); // member is removed from the unallocatedMembers members for the sake of efficiency
 			}
-			teamOfMembers.add(tempTeam);
+			// determines if extraMember was used and if so documents it
+			extraMembersUsed++;
+			teamOfMembers.add(tempTeam); // team is added to list of teams for further usage
 		}
 		printTeams();
-		//TODO How the fuck do i do this
+	}
+
+	private void groupByDifference() {
+		teamOfMembers = new ArrayList<Team>();
+		SortByCenterDistance(); // reorder member list to allow for relative comparison
+		ArrayList<Member> unallocatedMembers = (ArrayList<Member>) members.clone(); // create modifiable member list
+		int extraMembersUsed = 0;
+		int extraMembers = 1;
+		for (int x = 0; x < teamNum; x++){
+			// checks if this team should be given an extra member
+			if (extraMemberTeams<=extraMembersUsed)
+				extraMembers = 0;
+			Team tempTeam = new Team(String.valueOf(x)); // creates a new team to fill, ID is 0-n
+			// adds the first member, which is the closes unused point from the center
+			// this prevents algorithm from group all outliers together and instead bases grouping on a member near the center allowing for a more equal distribution of members without addional runtime complexity
+			tempTeam.addMember(unallocatedMembers.get(unallocatedMembers.size()-1));
+			unallocatedMembers.remove(unallocatedMembers.size()-1); // removes the used member from the valid member list
+			System.out.println("Size" + unallocatedMembers.size());
+			for (int y = 0; y < teamSize-1; y++){
+				if(unallocatedMembers.size()<=0) break; // checks if there are more members to add
+				int index = 0; // stores the index that member m is stored | lowers run time because no lookup algorithm
+				Member m = unallocatedMembers.get(0); // stores the member that will be added to a group
+				for (int j =1; j < unallocatedMembers.size(); j++){
+					// sort thoughts the valid member list in order to find the member that is closes to the current team layout.
+					// averageEuclideanDistance returns the average euclidean distance between the member m and all members stored in the team
+					if (averageEuclideanDistance(m, tempTeam) < averageEuclideanDistance(unallocatedMembers.get(j), tempTeam)) {
+						// resets m and index to reflect a member that fits the team more
+						m = unallocatedMembers.get(j);
+						index = j;
+					}
+				}
+				tempTeam.addMember(m);
+				unallocatedMembers.remove(index); // member is removed from the unallocatedMembers members for the sake of efficiency
+			}
+			// determines if extraMember was used and if so documents it
+			if (extraMemberTeams>=extraMembersUsed)
+				extraMembersUsed++;
+			teamOfMembers.add(tempTeam); // team is added to list of teams for further usage
+		}
+		printTeams();
+	}
+
+	private float averageEuclideanDistance(Member m, Team t){
+		int dis = 0;
+		for (int x = 0; x < t.getSize(); x++)
+			dis += (int)(100*Math.abs(Member.euclideanDistance(t.getMember(x), m)));
+		return (dis/t.getSize())/100.00f;
 	}
 
 	private void SortByCenterDistance(){
